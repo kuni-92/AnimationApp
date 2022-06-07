@@ -25,6 +25,11 @@ struct ContentView: View {
                 .frame(width: 100, height: 100)
                 .rotationEffect(Angle(degrees: scaleFlag ? 0 :180))
                 .animation(.spring(), value: self.scaleFlag)
+            Rectangle()
+                .fill(Color.brown)
+                .frame(width: 100, height: 100)
+                .rotation3DEffect(Angle(degrees: 180), axis: (x: 180, y: 240, z: 180))
+                .animation(.spring(), value: self.scaleFlag)
             Spacer()
             Button("Flag ON") {
                 withAnimation {
