@@ -13,10 +13,6 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Circle()
-                .fill(Color.blue)
-                .frame(width: 200, height: 200)
-                .scaleEffect(scaleFlag ? 1.0 : 2.0)
-            Circle()
                 .fill(Color.red)
                 .frame(width: 200, height: 200)
                 .scaleEffect(scaleFlag ? 1.0 : 0.5)
@@ -25,11 +21,10 @@ struct ContentView: View {
                 .frame(width: 100, height: 100)
                 .rotationEffect(Angle(degrees: scaleFlag ? 0 :180))
                 .animation(.spring(), value: self.scaleFlag)
-            Rectangle()
-                .fill(Color.brown)
+            Circle()
+                .fill(Color.red)
                 .frame(width: 100, height: 100)
-                .rotation3DEffect(Angle(degrees: 180), axis: (x: 180, y: 240, z: 180))
-                .animation(.spring(), value: self.scaleFlag)
+                .offset(x: self.scaleFlag ? -100 : 100, y: 100)
             Spacer()
             Button("Flag ON") {
                 withAnimation {
