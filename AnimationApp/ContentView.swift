@@ -22,9 +22,10 @@ struct ContentView: View {
                 .rotationEffect(Angle(degrees: scaleFlag ? 0 :180))
                 .animation(.spring(), value: self.scaleFlag)
             Circle()
-                .fill(Color.red)
+                .fill(Color.orange)
                 .frame(width: 100, height: 100)
                 .offset(x: self.scaleFlag ? -100 : 100, y: 100)
+                .animation(.linear(duration: 1.0).repeatForever(), value:self.scaleFlag)
             Spacer()
             Button("Flag ON") {
                 withAnimation {
